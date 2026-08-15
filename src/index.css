@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --term-bg: #0a0a0a;
+  --term-bg-light: #0f0f0f;
+  --term-bg-card: #0d0d0d;
+  --term-bg-card-hover: #111111;
+  --term-green: #00ff41;
+  --term-green-dim: #00cc33;
+  --term-green-bright: #33ff66;
+  --term-green-glow: rgba(0, 255, 65, 0.15);
+  --term-amber: #ffb000;
+  --term-red: #ff3333;
+  --term-cyan: #00d4ff;
+  --term-white: #e0e0e0;
+  --term-gray: #999999;
+  --term-gray-dim: #555555;
+  --term-border: #1a1a1a;
+  --term-border-green: rgba(0, 255, 65, 0.2);
+  --term-font: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  --header-height: 56px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--term-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--term-bg);
+  min-height: 100vh;
+  color: var(--term-green);
+  overflow-x: hidden;
+}
+
+code {
+  font-family: var(--term-font);
+}
+
+::selection {
+  background: var(--term-green);
+  color: var(--term-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--term-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--term-gray-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--term-green-dim);
+}

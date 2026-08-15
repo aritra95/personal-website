@@ -1,0 +1,118 @@
+.publications {
+  background: var(--term-bg-light);
+  position: relative;
+}
+
+.publications .container {
+  position: relative;
+  z-index: 1;
+}
+
+.publications-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.publications h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.publication-card {
+  padding: 24px;
+  border-radius: 6px;
+  background: var(--term-bg-card);
+  border: 1px solid var(--term-border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  border-color: var(--term-border-green);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.04);
+}
+
+.publication-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pub-icon {
+  font-size: 1.3rem;
+  color: var(--term-green);
+  background: rgba(0, 255, 65, 0.08);
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--term-border);
+}
+
+.publication-header h3 {
+  color: var(--term-white);
+  font-size: 0.92rem;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.publication-header h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--term-border);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.publication-header h3 a:hover {
+  color: var(--term-green);
+  border-color: var(--term-green);
+}
+
+.publication-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.publication-meta .venue {
+  font-size: 0.78rem;
+  color: var(--term-gray);
+}
+
+.publication-meta .date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--term-gray-dim);
+}
+
+.publication-summary {
+  color: var(--term-gray);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card {
+    padding: 20px;
+  }
+}

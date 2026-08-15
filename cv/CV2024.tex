@@ -1,0 +1,214 @@
+%------------------------
+% Resume Template
+% Author : Aritra Basu
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,20pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemExperience}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemRoles}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingRoles}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingPublication}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \\
+      \textit{#2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-1pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------Heading-----------------
+\begin{center}
+    {\Huge \scshape Aritra Basu} \\ \vspace{2pt}
+    1000 Escalon Ave, Apt L2095, Sunnyvale, CA 94085 \\ \vspace{2pt}
+    \small \raisebox{-0.1\height}\faPhone\ 858-281-3197 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{aritra21295@gmail.com}} ~ 
+    \href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/aritra95/}}  ~
+    % \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/username}}
+\end{center}
+
+\vspace{-2pt}
+\section{Education}
+%-----------Education-----------------
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {University of California, San Diego (UCSD)}{San Diego, CA}
+        {Master of Science - Computer Science (GPA: 3.77/4.0)}{Jan. 2021 - June 2022}
+        {\footnotesize {\newline \newline{}\textbf{Courses:} Distributed Computing, Operating Systems, Virtualization, Computer Security, Computer Architecture, Design of Algorithms}}
+        \resumeSubheading
+        {Vellore Institute of Technology (VIT)}{Vellore, India}
+        {B.Tech - Electronics and Communication Engineering (GPA: 9.64/10) (Silver Medalist)}{July 2014 - April 2018}
+        {\footnotesize {\newline \newline{}\textbf{Courses:} Computer Communication, Digital Communication, Wireless Communication, Information Theory, Data Structures}}
+    \resumeSubHeadingListEnd
+
+\section{Skills}
+%-----------Skills-----------------
+	\resumeSubHeadingListStart
+	    \resumeSubItem{Languages}{~C, C++, Python, Bash}
+	    \resumeSubItem{Tools}{~~~~~~~~~Git, Wireshark, tcpdump, gdb, iptables, DPDK, Docker, Kubernetes, Jenkins, Visual Studio, PyCharm}
+	    \resumeSubItem{Platforms}{~~Linux, Linux Kernel, Windows, macOS, AWS, GCP}
+	    \resumeSubItem{Networks}{~~~TCP/IP, UDP, IPSec, IPv4/IPv6, SSL/TLS, DTLS, DNS, DHCP, ARP, ICMP, BGP, OSPF, SD-WAN}
+    \resumeSubHeadingListEnd
+
+\vspace{-2pt}
+%-----------Experience-----------------
+\section{Experience}
+    \resumeSubHeadingListStart
+    \resumeSubheading{Cisco Systems, Inc.}{San Jose, CA}
+    {Software Engineer III}{June 2024 - Present}
+    \resumeItemListStart
+        \resumeItemExperience{Actively involved in the development of VPP (vector packet processing) hoststack.}
+        \resumeItemExperience{Working on adding MASQUE (Proxying UDP in HTTP/3) support in curl.}
+        \resumeItemExperience{Working on Go syscall interception using Frida to use it as an alternative to LDPreload.}
+        \vspace{2pt}
+    \resumeItemListEnd
+    
+    \resumeSubheading{VMware LLC (acquired by Broadcom Inc.)}{Palo Alto, CA}
+    {R\&D Software Engineer II}{July 2022 - June 2024}
+    \resumeItemListStart
+        \resumeItemExperience{Actively involved with the Gateway and Routing pillars within the SASE SD-WAN DP-CP team.}
+        \resumeItemExperience{Added OSPFv3 support and addressed major technical debts in route map design for BGP.}
+        \resumeItemExperience{Implemented a persistent statistical counters storage mechanism to enhance debuggability experience.}
+        \resumeItemExperience{Worked on adding Mellanox DPDK PMD support to improve performance with ConnectX NICs.}   
+        \vspace{2pt}
+    \resumeItemListEnd
+
+    \resumeSubheading{VMware Inc.}{Palo Alto, CA}
+    {Intern - Product Development}{June 2021 - Sept. 2021}
+    \resumeItemListStart
+        \resumeItemExperience{Automated the scale testbed setup process for the  dataplane team.}
+        \resumeItemExperience{Configured L2 \& L3 VLANs, VRFs and BGP associations between switches for the testbed setup.}
+        \resumeItemExperience{Worked on containerization of edge services to simulate tunnel scale.}
+        \vspace{2pt}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Netskope}{Bengaluru, India}
+    {Member of Technical Staff I}{July 2018 - July 2020}
+    \resumeItemListStart
+        \resumeItemExperience{Enhanced the Netskope IPSec solution to show the status and bandwidth of tunnels.}
+        \resumeItemExperience{Improved the Netskope IPSec solution to support multiple tunnels from the same source IP.}
+        \resumeItemExperience{Enhanced the Netskope Gateway solution by improving the performance of DTLS tunnels.}        
+        \resumeItemExperience{Migrated the Netskope IPSec solution from Strongswan v5.3.5 to v5.7.2 to fix security vulnerabilities.}
+        \vspace{2pt}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Netskope}{Bengaluru, India}
+    {Software Developer Intern}{Jan. 2018 - June 2018}
+    \resumeItemListStart
+        \resumeItemExperience{Implemented code to uniquely identify devices steering traffic to Netskope cloud.}
+        \resumeItemExperience{Enhanced a library for loading Netskope private root CA certificate in Firefox certdb.}
+        \resumeItemExperience{Migrated the Netskope Client codebase from Visual Studio 2012 to Visual Studio 2015.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-2pt}
+%-----------Projects-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeSubItem{Router Design}{Built a simple router to handle incoming Ethernet frames, process ARP/ICMP packets, generate ARP replies and ICMP messages, forward/drop TCP/UDP packets and implemented ARP caching and longest prefix match routing.}
+    \resumeSubItem{Sandboxing libopus in Mozilla Firefox}{Sandboxed the Opus media library in Firefox by using the RLBox framework to reduce the attack surface with minimal impact on audio performance and measured the performance impact of the changes.}
+    \resumeSubItem{Tribbler (Mock Twitter)}{Designed and implemented a distributed, scalable, fault-tolerant and reliable key-value (KV) store in Rust and used the KV store to evaluate the performance across 3 different data replication strategies.}
+\resumeSubHeadingListEnd
+
+\vspace{-2pt}
+%-----------Roles and Responsibilities-----------------
+\section{Roles and Responsibilities}
+\resumeSubHeadingListStart
+\resumeSubheadingRoles
+    {Graduate Teaching Assistant (TA) - University of California, San Diego (UCSD)}{Jan. 2021 - June 2022}
+    \resumeItemListStart
+        \resumeItemRoles{Computer Networks (CSE123) - Spring 2022, Winter 2022, Spring 2021}
+        \resumeItemRoles{Networked Services (CSE124) - Fall 2021}
+        \resumeItemRoles{Computer Architecture (CSE141) - Winter 2021}
+        \resumeItemRoles{Responsibilities include leading discussion sessions, holding office hours, proctoring, preparing assessments and grading.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}

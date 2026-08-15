@@ -1,0 +1,249 @@
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* CRT Scanline overlay */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.015) 0px,
+    rgba(0, 0, 0, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+main {
+  position: relative;
+}
+
+/* Sections */
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0 60px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(0, 255, 65, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
+  border: 1px solid var(--term-border-green);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.03);
+}
+
+/* Card */
+.card {
+  background: var(--term-bg-card);
+  border-radius: 6px;
+  padding: 28px;
+  margin: 16px 0;
+  border: 1px solid var(--term-border);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--term-border-green);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.06);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--term-green);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: var(--term-font);
+  transition: all 0.3s ease;
+  border: 1px solid var(--term-green);
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  background: var(--term-green);
+  color: var(--term-bg);
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--term-gray-dim);
+  color: var(--term-gray);
+}
+
+.btn-outline:hover {
+  background: var(--term-green-dim);
+  border-color: var(--term-green-dim);
+  color: var(--term-bg);
+}
+
+/* Terminal window chrome */
+.terminal-window {
+  background: var(--term-bg-card);
+  border: 1px solid var(--term-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--term-border);
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green { background: #28c840; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  color: var(--term-gray-dim);
+  font-size: 11px;
+  font-family: var(--term-font);
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: var(--term-font);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: var(--term-font);
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--term-white);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--term-white);
+}
+
+h2::before {
+  content: '$ ';
+  color: var(--term-green);
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--term-green-dim);
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: var(--term-gray);
+  font-size: 13px;
+}
+
+/* Section background */
+.section-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  section {
+    padding: 80px 0 50px;
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.7rem; }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0 40px;
+    min-height: auto;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .card {
+    padding: 20px;
+    margin: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .terminal-body {
+    padding: 14px;
+    font-size: 11px;
+  }
+}

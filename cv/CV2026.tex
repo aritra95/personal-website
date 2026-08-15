@@ -1,0 +1,236 @@
+%------------------------
+% CV - Aritra Basu
+% Modern LaTeX template — Overleaf compatible
+% Based on CV2024.tex, updated April 2026
+%------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+% ---- Encoding & fonts ----
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---- Layout ----
+\usepackage[top=0.55in, bottom=0.55in, left=0.65in, right=0.65in]{geometry}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---- Colors ----
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{accent}{HTML}{00aa55}       % terminal green
+\definecolor{darktext}{HTML}{1a1a1a}
+\definecolor{midtext}{HTML}{444444}
+\definecolor{lighttext}{HTML}{888888}
+
+% ---- Section headings ----
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\scshape\color{darktext}}
+  {}{0em}{}
+  [\vspace{1pt}\textcolor{accent}{\titlerule[1.2pt]}\vspace{3pt}]
+\titlespacing*{\section}{0pt}{11pt}{3pt}
+
+% ---- Lists ----
+\usepackage{enumitem}
+\setlist{nosep}
+
+% ---- Tables ----
+\usepackage{tabularx}
+\usepackage{array}
+
+% ---- Icons ----
+\usepackage{fontawesome5}
+
+% ---- Hyperlinks ----
+\usepackage[hidelinks, colorlinks=false]{hyperref}
+\urlstyle{same}
+
+% ---- ATS parsability ----
+\pdfgentounicode=1
+
+%-----------------------------
+% Macros
+%-----------------------------
+
+% Two-column header row: left = bold title, right = period (gray)
+\newcommand{\cvperiod}[1]{{\small\color{lighttext}#1}}
+\newcommand{\cvloc}[1]{{\small\color{lighttext}\faMapMarkerAlt\ #1}}
+
+% Full job entry: {Title}{Period}{Company}{Location}
+\newenvironment{cventry}[4]{%
+  \vspace{3pt}%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \cvperiod{#2} \\[-1pt]
+    \textit{\color{midtext}#3} & \cvloc{#4}
+  \end{tabularx}%
+  \vspace{1pt}%
+  \begin{itemize}[leftmargin=1.4em, itemsep=0pt, topsep=2pt, parsep=0pt, label={$\circ$}]
+}{%
+  \end{itemize}%
+  \vspace{1pt}%
+}
+
+% Bullet shorthand
+\newcommand{\cb}[1]{\item \small #1}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+%-----------------------------
+
+\begin{document}
+
+%---- Header ----
+\begin{center}
+  {\Huge\bfseries\scshape Aritra Basu}\\[5pt]
+  {\color{midtext} Systems \& Networking Software Engineer}\\[5pt]
+  \small
+  \faPhone\ 858-281-3197
+  \quad\textcolor{lighttext}{|}
+  \href{mailto:aritra21295@gmail.com}{\faEnvelope\ aritra21295@gmail.com}
+  \quad\textcolor{lighttext}{|}
+  \href{https://linkedin.com/in/aritra95/}{\faLinkedin\ linkedin.com/in/aritra95}
+  \quad\textcolor{lighttext}{|}
+  \href{https://linkedin.com/in/aritra95/}{\faGlobe\ aritra95.github.io}
+  \\[2pt]
+  \textcolor{lighttext}{\small Sunnyvale, CA 94085}
+\end{center}
+
+\vspace{2pt}
+
+%---- Profile ----
+\section{Profile}
+
+Senior systems software engineer specialising in high-performance networking, user-space data planes, and kernel-bypass techniques.
+Six years of industry experience spanning SASE/SD-WAN, VPN, and open-source network infrastructure.
+Active upstream contributor to \textbf{VPP (fd.io)}, \textbf{cURL}, \textbf{CalicoVPP}, and \textbf{systemd}.
+
+%---- Skills ----
+\section{Skills}
+
+\begin{tabular}{@{}ll}
+  \textbf{Languages}   & C, C\texttt{++}, Go, Python, Rust, Bash \\[2pt]
+  \textbf{Networking}  & TCP/IP, UDP, IPv4/IPv6, IPSec, TLS/DTLS, QUIC, HTTP/3, MASQUE, BGP, OSPFv3, SD-WAN \\[2pt]
+  \textbf{Data Plane}  & VPP (HostStack), DPDK, eBPF, netfilter/iptables \\[2pt]
+  \textbf{Debug Tools} & \texttt{gdb}, Wireshark, \texttt{tcpdump}, Frida, \texttt{perf}, \texttt{strace}, \texttt{ltrace}, Valgrind \\[2pt]
+  \textbf{Platforms}   & Linux, Linux Kernel, macOS, AWS, GCP \\[2pt]
+  \textbf{Tooling}     & Git, Docker, Kubernetes, Jenkins, CMake \\
+\end{tabular}
+
+%---- Experience ----
+\section{Experience}
+
+%----- Cisco: promotion block -----
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{Cisco Systems, Inc.} & \cvloc{San Jose, CA}
+\end{tabularx}
+\vspace{2pt}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \quad\textit{\color{midtext}Software Engineer IV}~{\small\color{accent}(promoted)} & \cvperiod{May 2026 – Present} \\[-1pt]
+  \quad\textit{\color{midtext}Software Engineer III} & \cvperiod{June 2024 – May 2026}
+\end{tabularx}
+\vspace{1pt}
+\begin{itemize}[leftmargin=2.2em, itemsep=0pt, topsep=2pt, parsep=0pt, label={$\circ$}]
+  \cb{Member of the VPP team within Cisco Security; enhancing \textbf{HostStack} — the user-space L4–L7 protocol stack in VPP}
+  \cb{Advancing VPP dataplane integration for \textbf{CalicoVPP} CNI in Kubernetes pod-networking environments}
+  \cb{Adding \textbf{HTTP/3 proxy CONNECT} and \textbf{MASQUE CONNECT-UDP} support for the OpenSSL QUIC backend in \textbf{cURL}}
+  \cb{Contributing \textbf{IPv6} and \textbf{DHCPv6} control-plane features to VPP}
+  \cb{Building \textbf{MCP servers} and agentic developer-tooling workflows for the VPP ecosystem}
+\end{itemize}
+\vspace{2pt}
+
+%----- VMware / Broadcom -----
+\begin{cventry}{Member of Technical Staff II}{July 2022 – June 2024}{VeloCloud (VMware LLC, acquired by Broadcom Inc.)}{Palo Alto, CA}
+  \cb{Owned the \textbf{Gateway} and \textbf{Routing} pillars of the SASE SD-WAN data and control plane team}
+  \cb{Resolved critical technical debt in \textbf{BGP route-map} design and introduced \textbf{OSPFv3} support}
+  \cb{Implemented persistent statistical counter storage to improve field debuggability}
+  \cb{Delivered \textbf{Mellanox DPDK PMD} support to elevate ConnectX NIC performance}
+  \cb{Intensive production debugging with \texttt{tcpdump}, \texttt{gdb}, and \texttt{iptables}}
+\end{cventry}
+
+%----- VMware Intern -----
+\begin{cventry}{Intern — Product Development}{June 2021 – September 2021}{VeloCloud (VMware Inc.)}{Palo Alto, CA}
+  \cb{Automated the scale testbed setup process for the SEBU data plane team}
+  \cb{Configured L2/L3 VLANs, VRFs, and BGP associations across lab infrastructure}
+  \cb{Containerised edge services to simulate large-scale tunnel deployments}
+\end{cventry}
+
+%----- Netskope MTS I -----
+\begin{cventry}{Member of Technical Staff I}{July 2018 – July 2020}{Netskope}{Bengaluru, India}
+  \cb{Enhanced the \textbf{IPSec} solution with tunnel-status monitoring and per-tunnel bandwidth visibility}
+  \cb{Enabled multi-tunnel support from a single source IP in the IPSec gateway}
+  \cb{Improved Netskope Gateway \textbf{DTLS} tunnel performance and resolved live production network issues}
+  \cb{Migrated the IPSec stack from \textbf{Strongswan v5.3.5 to v5.7.2} to fix security vulnerabilities}
+  \cb{Performed dynamic analysis and syscall hooking with \textbf{Frida} for binary instrumentation}
+\end{cventry}
+
+%----- Netskope Intern -----
+\begin{cventry}{Software Developer Intern}{January 2018 – June 2018}{Netskope}{Bengaluru, India}
+  \cb{Implemented device fingerprinting to uniquely identify traffic steering into the Netskope cloud}
+  \cb{Enhanced a certificate-loading library for Firefox \texttt{certdb} integration}
+  \cb{Migrated the Netskope Client codebase from Visual Studio 2012 to Visual Studio 2015}
+\end{cventry}
+
+%---- Open Source ----
+\section{Open Source Contributions}
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt, topsep=2pt, parsep=0pt, label={$\circ$}]
+  \item \textbf{cURL} \textcolor{lighttext}{\href{https://github.com/curl/curl}{\small(github.com/curl/curl)}} —
+    Adding HTTP/3 proxy CONNECT and MASQUE CONNECT-UDP support for the OpenSSL QUIC backend.
+  \item \textbf{VPP / fd.io} \textcolor{lighttext}{\href{https://fd.io}{\small(fd.io/vpp)}} —
+    HostStack L4–L7 protocol stack enhancements; IPv6 and DHCPv6 control-plane features.
+  \item \textbf{CalicoVPP} \textcolor{lighttext}{\href{https://github.com/projectcalico/vpp-dataplane}{\small(github.com/projectcalico/vpp-dataplane)}} —
+    VPP dataplane integration for Kubernetes CNI pod networking.
+  \item \textbf{systemd} \textcolor{lighttext}{\href{https://github.com/systemd/systemd}{\small(github.com/systemd/systemd)}} —
+    Contributions to \texttt{networkd} and service-management components.
+\end{itemize}
+
+%---- Education ----
+\section{Education}
+
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{University of California, San Diego (UCSD)} & San Diego, CA \\[-1pt]
+  \textit{\color{midtext}M.S.\ Computer Science}~\textcolor{lighttext}{\small(GPA: 3.77/4.0)} & \cvperiod{Jan 2021 – June 2022}
+\end{tabularx}
+\vspace{1pt}
+{\small\color{lighttext} Courses: Distributed Computing, Operating Systems, Virtualization, Computer Security, Computer Architecture, Design of Algorithms}
+
+\vspace{6pt}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{Vellore Institute of Technology (VIT)} & Vellore, India \\[-1pt]
+  \textit{\color{midtext}B.Tech\ Electronics \& Communication Engineering}~\textcolor{lighttext}{\small(GPA: 9.64/10,\ Silver Medalist)} & \cvperiod{July 2014 – April 2018}
+\end{tabularx}
+\vspace{1pt}
+{\small\color{lighttext} Courses: Computer Communication, Digital Communication, Wireless Communication, Information Theory, Data Structures}
+
+%---- Projects ----
+\section{Academic Projects}
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt, topsep=2pt, parsep=0pt, label={$\circ$}]
+  \item \textbf{Router Design} —
+    Built a software router handling ARP/ICMP processing, TCP/UDP packet forwarding, ARP-cache management, and longest-prefix-match routing.
+  \item \textbf{Sandboxing libopus in Firefox} —
+    Used the \textbf{RLBox} sandboxing framework to isolate the Opus codec in Firefox with minimal audio-performance overhead; measured and documented the performance delta.
+  \item \textbf{Tribbler (Distributed KV Store)} —
+    Designed and implemented a distributed, fault-tolerant key-value store in \textbf{Rust}; benchmarked three data-replication strategies at scale.
+\end{itemize}
+
+%---- Teaching ----
+\section{Teaching}
+
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{Graduate Teaching Assistant — UC San Diego, Jacobs School of Engineering} & Jan 2021 – June 2022
+\end{tabularx}
+\vspace{1pt}
+\begin{itemize}[leftmargin=1.4em, itemsep=0pt, topsep=2pt, parsep=0pt, label={$\circ$}]
+  \item \small CSE123 Computer Networks \textcolor{lighttext}{(Spring 2022, Winter 2022, Spring 2021)} — Prof.\ Aaron Schulman \& Alex Snoeren
+  \item \small CSE124 Networked Services \textcolor{lighttext}{(Fall 2021)} — Prof.\ George Porter
+  \item \small CSE141 Computer Architecture \textcolor{lighttext}{(Winter 2021)} — Prof.\ Bryan Chin
+\end{itemize}
+
+\end{document}
